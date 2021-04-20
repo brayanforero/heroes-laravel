@@ -14,7 +14,7 @@ class HeroController extends Controller
      */
     public function index()
     {
-        $heroes = Hero::paginate(10);
+        $heroes = Hero::latest()->paginate(10);
         return view('heroes.index',[
             'heroes' => $heroes
         ]);
@@ -27,7 +27,7 @@ class HeroController extends Controller
      */
     public function create()
     {
-        //
+        return view('heroes.create');
     }
 
     /**
@@ -38,7 +38,13 @@ class HeroController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $hero = new Hero;
+        $hero->fill($request->all([
+            'name', 'company', 'url'
+        ]));
+        $hero->save();
+
+        return redirect()->route('heroes.index');
     }
 
     /**
