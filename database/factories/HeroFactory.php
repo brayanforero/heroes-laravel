@@ -4,7 +4,7 @@ namespace Database\Factories;
 
 use App\Models\Hero;
 use Illuminate\Database\Eloquent\Factories\Factory;
-
+use Illuminate\Support\Str;
 class HeroFactory extends Factory
 {
     /**
@@ -21,8 +21,12 @@ class HeroFactory extends Factory
      */
     public function definition()
     {
+        $name = $this->faker->unique()->sentence();
+
         return [
-            //
+            'name' => $name,
+            'company' => $this->faker->randomElement(['DC', 'MARVEL']),
+            'url' => Str::slug($name)
         ];
     }
 }

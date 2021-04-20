@@ -14,7 +14,10 @@ class HeroController extends Controller
      */
     public function index()
     {
-        return view('heroes.index');
+        $heroes = Hero::paginate(10);
+        return view('heroes.index',[
+            'heroes' => $heroes
+        ]);
     }
 
     /**
