@@ -7,7 +7,7 @@
                 <a class="nav-link active" href="#">Home</a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" href="#">Heroes</a>
+                <a class="nav-link" href="{{route('heroes.index')}}">Heroes</a>
                 </li>
                 <li class="nav-item">
                 <a class="nav-link" href="#">Princing</a>

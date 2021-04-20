@@ -16,4 +16,9 @@ class Hero extends Model
 
     protected $fillable = ['name', 'company', 'url'];
 
+    public function getRouteKeyName()
+    {
+        return 'url';
+    }
+
 }
