@@ -3,5 +3,24 @@
 @section('title' ,$hero->name)
 
 @section('content')
-    <h2>{{$hero->name}}</h2>
+    <main class="pt-5 p-4">
+        <div class="container">
+            <div class=" justify-content-center">
+                <div class="col-12 col-md-8">
+                    <article class="card">
+                        <img style="height: 320px; object-fit: cover;" src="https://bitsofco.de/content/images/2018/12/Screenshot-2018-12-16-at-21.06.29.png" class="card-img-top" alt="poster">
+                        <div class="card-body text-truncate">
+                        <div class="card-body">
+                            <h1>{{$hero->name}}</h1>
+                            <p>Company: {{$hero->company}}</p>
+                        </div>
+                        <div class="card-footer">
+                            <a class="btn btn-danger" href="#">Delete</a>
+                            <a class="btn btn-success" href="#">Update</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </main>
 @endsection
