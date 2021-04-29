@@ -91,6 +91,7 @@ class HeroController extends Controller
      */
     public function destroy(Hero $hero)
     {
-        //
+        Hero::destroy($hero->id);
+        return redirect()->route('heroes.index');
     }
 }

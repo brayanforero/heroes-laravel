@@ -15,7 +15,11 @@
                             <p>Company: {{$hero->company}}</p>
                         </div>
                         <div class="card-footer">
-                            <a class="btn btn-danger" href="#">Delete</a>
+                            <form action="{{route('heroes.destroy', $hero)}}" method="post">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-danger" href="#">Delete</button>
+                            </form>
                             <a class="btn btn-success" href="#">Update</a>
                         </div>
                     </article>
