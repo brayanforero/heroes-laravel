@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Hero;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Str;
 class HeroController extends Controller
 {
     /**
@@ -68,7 +68,9 @@ class HeroController extends Controller
      */
     public function edit(Hero $hero)
     {
-        //
+        return view('heroes.edit', [
+            'hero' => $hero
+        ]);
     }
 
     /**
@@ -80,7 +82,12 @@ class HeroController extends Controller
      */
     public function update(Request $request, Hero $hero)
     {
-        //
+        $hero->name = $request->name;
+        $hero->company = $request->company;
+        $hero->url = Str::slug($request->name);
+        $hero->save();
+
+        return redirect()->route('heroes.show', $hero);
     }
 
     /**

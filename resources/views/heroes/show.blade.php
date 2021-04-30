@@ -20,7 +20,7 @@
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-danger" href="#">Delete</button>
                             </form>
-                            <a class="btn btn-success" href="#">Update</a>
+                            <a class="btn btn-success" href="{{route('heroes.edit', $hero)}}">Update</a>
                         </div>
                     </article>
                 </div>
