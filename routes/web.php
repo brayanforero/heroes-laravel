@@ -8,6 +8,10 @@ use Illuminate\Support\Facades\Route;
     return view('welcome');
 });*/
 
+Route::view('/', 'home.index')->name('home.index');
+
+Route::get('login', function (){
+    return view('auth.login');
+})->name('login');
+
 Route::resource('heroes', HeroController::class);
-
-
