@@ -12,7 +12,7 @@
                         <div class="card-body text-truncate">
                         <div class="card-body">
                             <h1>{{$hero->name}}</h1>
-                            <p>Company: {{$hero->company}}</p>
+                            <p>Comics: {{$hero->comics}}</p>
                         </div>
                         <div class="card-footer">
                             <form action="{{route('heroes.destroy', $hero)}}" method="post">
