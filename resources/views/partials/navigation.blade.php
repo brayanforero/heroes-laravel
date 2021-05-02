@@ -7,13 +7,14 @@
                     <li class="nav-item">
                     <a class="nav-link {{ request()->routeIs('home.*') ? 'btn btn-primary' : '' }} " href="{{route('home.index')}}">Home</a>
                     </li>
-                    <li class="nav-item">
+                    {{-- <li class="nav-item">
                         <a class="nav-link {{ request()->routeIs('heroes.*') ? 'btn btn-primary' : '' }} " href="{{route('login')}}">Login</a>
-                    </li>
-                @else
+                    </li> --}}
                     <li class="nav-item">
                         <a class="nav-link {{ request()->routeIs('heroes.*') ? 'btn btn-primary' : '' }} " href="{{route('heroes.index')}}">Heroes</a>
                     </li>
+                @else
+                    
 
                     <li class="nav-item">
                         <a class="nav-link {{ request()->routeIs('heroes.*') ? 'btn btn-primary' : '' }} " href="{{route('heroes.index')}}">Logout</a>
