@@ -16,8 +16,9 @@ class CreateHeroesTable extends Migration
         Schema::create('heroes', function (Blueprint $table) {
             $table->id();
             $table->string('name')->unique();
-            $table->string('company');
+            $table->string('comics');
             $table->string('url');
+            $table->text('poster');
             $table->timestamps();
         });
     }

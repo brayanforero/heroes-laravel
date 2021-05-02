@@ -2,8 +2,7 @@
     @forelse ($heroes as $hero)
       <div class="col-12 col-md-6 col-lg-4 mb-4">
         <article class="card">
-            {{-- <img style="height: 320px; object-fit: cover;" src="https://gritaradio.com/wp-content/uploads/2020/08/the-boys.jpg" class="card-img-top" alt="poster"> --}}
-            <img style="height: 320px; object-fit: cover;" src="https://bitsofco.de/content/images/2018/12/Screenshot-2018-12-16-at-21.06.29.png" class="card-img-top" alt="poster">
+            <img style="height: 320px; object-fit: cover;" src="{{$hero->poster}}" class="card-img-top" alt="poster">
             <div class="card-body text-truncate">
             <h2>{{$hero->name}}</h2>
             <p>{{$hero->company}}</p>

@@ -11,10 +11,13 @@
                         <input type="text" name="name" autocomplete="off" placeholder="Write name Heroe" class="form-control p-4">
                     </div>
                     <div class="form-group">
-                        <input type="text" name="company" autocomplete="off" placeholder="Company" class="form-control p-4">
+                        <input type="text" name="comics" autocomplete="off" placeholder="Comics" class="form-control p-4">
                     </div>
                     <div class="form-group">
                         <input type="text" name="url" autocomplete="off" placeholder="Write slug url" class="form-control p-4">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="poster" autocomplete="off" placeholder="Write url image" class="form-control p-4">
                     </div>
                     <div class="form-group">
                         <input type="submit" value="Add" class="btn btn-block btn-success">

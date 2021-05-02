@@ -25,8 +25,9 @@ class HeroFactory extends Factory
 
         return [
             'name' => $name,
-            'company' => $this->faker->randomElement(['DC', 'MARVEL']),
-            'url' => Str::slug($name)
+            'comics' => $this->faker->randomElement(['DC', 'MARVEL']),
+            'url' => Str::slug($name),
+            'poster' => 'https://bitsofco.de/content/images/2018/12/Screenshot-2018-12-16-at-21.06.29.png'
         ];
     }
 }

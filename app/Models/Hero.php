@@ -14,7 +14,7 @@ class Hero extends Model
      * @var array $fillable
      */
 
-    protected $fillable = ['name', 'company', 'url'];
+    protected $fillable = ['name', 'comics', 'url', 'poster'];
 
     public function getRouteKeyName()
     {

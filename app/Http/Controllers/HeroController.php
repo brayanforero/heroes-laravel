@@ -40,7 +40,7 @@ class HeroController extends Controller
     {
         $hero = new Hero;
         $hero->fill($request->all([
-            'name', 'company', 'url'
+            'name', 'comics', 'url', 'poster'
         ]));
         $hero->save();
 

@@ -8,7 +8,7 @@
             <div class=" justify-content-center">
                 <div class="col-12 col-md-8">
                     <article class="card">
-                        <img style="height: 320px; object-fit: cover;" src="https://bitsofco.de/content/images/2018/12/Screenshot-2018-12-16-at-21.06.29.png" class="card-img-top" alt="poster">
+                        <img style="height: 320px; object-fit: cover;" src="{{$hero->poster}}" class="card-img-top" alt="poster">
                         <div class="card-body text-truncate">
                         <div class="card-body">
                             <h1>{{$hero->name}}</h1>
