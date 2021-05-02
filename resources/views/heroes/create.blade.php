@@ -5,6 +5,7 @@
         <div class="row justify-content-md-center">
             <div class="col-12 col-md-6">
                 <h2>Agrega tu heroe favorito</h2>
+                @include('partials.errors')
                 <form action="{{route('heroes.store')}}" method="post">
                     @csrf
                     <div class="form-group">

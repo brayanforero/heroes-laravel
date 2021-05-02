@@ -38,6 +38,13 @@ class HeroController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'name' => 'required',
+            'comics' => 'required',
+            'url' => 'required',
+            'poster' => 'required'
+        ]);
+
         $hero = new Hero;
         $hero->fill($request->all([
             'name', 'comics', 'url', 'poster'
@@ -82,13 +89,19 @@ class HeroController extends Controller
      */
     public function update(Request $request, Hero $hero)
     {
+        $request->validate([
+            'name' => 'required',
+            'comics' => 'required',
+            'poster' => 'required'
+        ]);
+        
         $hero->name = $request->name;
         $hero->comics = $request->comics;
         $hero->poster = $request->poster;
         $hero->url = Str::slug($request->name);
         $hero->save();
 
-        return redirect()->route('heroes.show', $hero);
+        return redirect()->route('heroes.show', $hero)->with('status', 'Hero Updated');
     }
 
     /**
@@ -100,6 +113,6 @@ class HeroController extends Controller
     public function destroy(Hero $hero)
     {
         Hero::destroy($hero->id);
-        return redirect()->route('heroes.index');
+        return redirect()->route('heroes.index')->with('status', 'Hero Deleted');
     }
 }

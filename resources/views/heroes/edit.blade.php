@@ -11,6 +11,7 @@
                         <img style="height: 320px; object-fit: cover;" src="{{$hero->poster}}" class="card-img-top" alt="poster">
                         <div class="card-body text-truncate">
                         <div class="card-body">
+                            @include('partials.errors')
                             <form action="{{route('heroes.update', $hero)}}" method="POST">
                                 @csrf
                                 @method('PUT')
