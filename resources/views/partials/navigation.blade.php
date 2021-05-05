@@ -7,15 +7,18 @@
                     <li class="nav-item">
                     <a class="nav-link btn {{ request()->routeIs('home.*') ? 'btn-primary' : '' }} " href="{{route('home.index')}}">Home</a>
                     </li>
-                    {{-- <li class="nav-item">
-                        <a class="nav-link {{ request()->routeIs('heroes.*') ? 'btn btn-primary' : '' }} " href="{{route('login')}}">Login</a>
-                    </li> --}}
                     <li class="nav-item">
-                        <a class="nav-link btn {{ request()->routeIs('heroes.*') ? 'btn-primary' : '' }} " href="{{route('heroes.index')}}">Heroes</a>
+                        <a class="nav-link btn {{ request()->routeIs('auth.login') ? 'btn-primary' : '' }} " href="{{route('auth.login')}}">Login</a>
                     </li>
                 @else
                     <li class="nav-item">
-                        <a class="nav-link {{ request()->routeIs('heroes.*') ? 'btn btn-primary' : '' }} " href="{{route('heroes.index')}}">Logout</a>
+                        <span class="btn">Hola, {{auth()->user()->name}}</span>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn {{ request()->routeIs('heroes.*') ? 'btn-primary' : '' }} " href="{{route('heroes.index')}}">Heroes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn" href="{{route('heroes.index')}}">Logout</a>
                     </li>
                 @endguest
             </ul>

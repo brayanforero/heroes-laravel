@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\HeroController;
 use Illuminate\Support\Facades\Route;
 
@@ -10,8 +11,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::view('/', 'home.index')->name('home.index');
 
-Route::get('login', function (){
-    return view('auth.login');
-})->name('login');
+Route::view('login','auth.login')->name('auth.login');
 
-Route::resource('heroes', HeroController::class);
+Route::post('login',[ AuthController::class, 'loggedIn'])->name('auth.loggedIn');
+
+Route::resource('heroes', HeroController::class)->middleware('auth');

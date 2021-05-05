@@ -5,9 +5,11 @@
         <article class="card w-75 mx-auto">
             <div class="card-body pt-5">
                 <h1 class="text-center mb-5">Inicia Sesion</h1>
-                <form action="#" method="POST">
-                    <input type="text" placeholder="username" class="form-control mb-4">
-                    <input type="password" placeholder="password" class="form-control mb-4">
+                @include('partials.errors')
+                <form action="{{route('auth.loggedIn')}}" method="POST">
+                    @csrf
+                    <input required name="email" type="email" autocomplete="off" autofocus value="{{old('email')}}" placeholder="username" class="form-control mb-4">
+                    <input required name="password" type="password" placeholder="password" class="form-control mb-4">
                     <button class="btn btn-primary btn-block" type="submit">Login</button>
                 </form>
             </div>

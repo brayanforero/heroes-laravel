@@ -12,7 +12,7 @@
     @empty
         <h2>Tu lista de Heroes esta Vacia :(</h2>
     @endforelse
-    <div class="col-12">
+    <div class="col-12"
      {{$heroes->links()}}
     </div>
 </div>
