@@ -9,9 +9,9 @@ use Illuminate\Support\Facades\Route;
     return view('welcome');
 });*/
 
-Route::view('/', 'home.index')->name('home.index');
+Route::view('/', 'home.index')->name('home.index')->middleware('guest');
 
-Route::view('login','auth.login')->name('auth.login');
+Route::view('login','auth.login')->name('auth.login')->middleware('guest');
 
 Route::post('login',[ AuthController::class, 'loggedIn'])->name('auth.loggedIn');
 Route::post('logout',[ AuthController::class, 'logout'])->name('auth.logout');
