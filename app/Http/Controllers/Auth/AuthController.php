@@ -15,11 +15,19 @@ class AuthController extends Controller
     
     if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
-            return redirect()->intended('heroes');
+            return redirect()->intended('heroes')->with('status', 'Your Login Succesfuly');
     }
 
     return back()->withErrors([
       'email' => 'The provided credentials do not match our records.'
     ]); 
+   }
+
+   public function logout()
+   {
+    Auth::logout();
+    request()->session()->invalidate();
+    request()->session()->regenerateToken();
+    return redirect()->route('home.index')->with('status', 'Your Logout Succesfuly');
    }
 }

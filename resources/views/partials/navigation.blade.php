@@ -18,7 +18,10 @@
                         <a class="nav-link btn {{ request()->routeIs('heroes.*') ? 'btn-primary' : '' }} " href="{{route('heroes.index')}}">Heroes</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link btn" href="{{route('heroes.index')}}">Logout</a>
+                        <form action="{{route('auth.logout')}}" method="post">
+                            @csrf
+                            <a onclick="this.parentNode.submit()" class="nav-link btn" href="#">Logout</a>
+                        </form>
                     </li>
                 @endguest
             </ul>
